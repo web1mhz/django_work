@@ -1,0 +1,31 @@
+
+이번 강좌는 장고(Django)와 postgres연동하는 과정을 설명합니다.
+
+1) postgresql 설치
+
+2) postgres서버 생성
+
+3) 파이썬 가상환경 생성 후 django와 pysycopg2설치
+
+4) mysite 데이터베이스 생성
+   (필수) 장고프로젝트명과 동일하게!!!!
+
+5) 장고프로젝트 mysite 생성 후 settings.py 설정
+
+DATABASES = {
+    'default': {
+        #'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME' : 'mysite',
+        'USER' : 'postgres',
+        'PASSWORD' : '비밀번호xxxx',
+        'HOST' : '203.245.41.96',
+        'PORT' : '5432',
+    }
+}
+
+6) python manage.py migrate
+
+7) pgAdmin에서 확인
+ 
