@@ -17,11 +17,14 @@ from django.conf import settings
 # 미디어 경로가 있을때 필요
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include, re_path
+from django.urls import path, include
+
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^blog/', include('blog.urls')),
+    path('blog/', include('blog.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

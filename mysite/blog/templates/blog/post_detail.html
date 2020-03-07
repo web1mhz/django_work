@@ -1,0 +1,50 @@
+{% extends "blog/layout.html" %}
+
+
+{% block title %} {{post.title}} {%endblock%}
+
+{% block extra_head %}
+
+<style>
+    .post_photo {
+        max-width: 100%;
+    }
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class='container'>
+    <div class='row'>
+        <div class='col-sm-12'>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title}}</h5>
+                    <p class="card-text">
+                        {% if post.photo %}
+                        <img src="{{post.photo.url}}" class="card-img-top" alt="...">
+                        {% endif %}</p>
+                    <p class="card-text"><small class="text-muted">{{post.content|linebreaks}}</small></p>
+                </div>
+
+            </div>
+
+            <div class="card text-left">
+                <div class="card-header">
+                    <a href="{% url "blog:post_list" %}" class='btn btn-primary'>목록으로</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+{%endblock%}
